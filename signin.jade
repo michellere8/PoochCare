@@ -1,0 +1,23 @@
+extends layout2
+
+block content 
+
+  section.sngupBox
+    img.bkground(src='/images/banner1.jpg')
+    h2= error
+    .outter(style='margin-top: 5%;')
+      .inner
+        form#login_form(action='signin' method='post')
+          h1.ftitle Sign In
+          input(type='text' name='email' placeholder='Email..')
+          input(type='password' name='pass' placeholder='Password..')
+          fieldset
+            input#check(type='checkbox')
+            label#checklabel(for='check')
+            span(style='color:rgb(145, 145, 245) ;') Remember me
+          input#logIn(type='submit' value='Sign in..')
+          br
+          br
+          p(style='color:black;')
+            | Not a member? 
+            a#singIn(href='signup' style='color: red;') Sign up

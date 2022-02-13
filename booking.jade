@@ -1,0 +1,96 @@
+extends layout
+
+block content 
+  
+  section.content
+    #banner
+      img(src='images/booking.jpg' style='width:100%; height: auto;')
+      h2.title Bookings
+    #bookform
+      h2= message
+      form(action='/booking' method='post')
+        #inputf
+          input#name(type='text' name='name' placeholder='Name' required='')
+          br
+          br
+          input#email(type='text' name='email' placeholder='Email' required='')
+        #inputf
+          input#phone(type='text' name='phone' placeholder='Phone Number')
+          br
+          br
+          input#adress(type='text' name='adress' placeholder='Adress')
+        #inputf
+          input#name(type='text' name='dogname' placeholder='Pooch Name' required='')
+          br
+          br
+          label(for='state') Pooch Size
+          select#size(name='size' required='')
+            option(value='') 
+            option(value='Small') Small
+            option(value='Medium') Medium
+            option(value='Large') Large
+          br
+          label(for='state') Service
+          select#Service(name='service' required='')
+            option(value='') 
+            option(value='bath') Bathing & Blowdrying
+            option(value='Nails') Nail Trimming
+            option(value='Fur') Fur Styling
+            option(value='') 
+            option(value='Feed') Feeding Visitation
+            option(value='DayV') Full Day Visitation
+            option(value='DaysV') Multiple Day Visitation
+            option(value='') 
+            option(value='Walk') Single Walks
+            option(value='Walks') Group Walks
+            option(value='') 
+            option(value='InTrain') Indoor Training
+            option(value='BehaveTrain') Behavioral Training
+            option(value='CompTrain') Competition Training
+          br
+        #inputf
+          label(for='date') Date
+          input#date(type='date' placeholder='Date' name='date' required='')
+          br
+          br
+          label(for='time') Time
+          select#time(name='time' required='')
+            option(value='') --
+            option(value='9am') 9:00 AM
+            option(value='10am') 10:00 AM
+            option(value='11am') 11:00 AM
+            option(value='12pm') 12:00 PM
+            option(value='1pm') 1:00 PM
+            option(value='2pm') 2:00 PM
+            option(value='3pm') 3:00 PM
+            option(value='4pm') 4:00 PM
+            option(value='5pm') 5:00 PM
+        input#submitbn(type='submit' name='bookapp' value='Book Appointment')
+  section.content
+    h1 Contact us
+    .boxfill
+      .bg10
+        h3 Send Us a Message
+        p= message2
+        p= error
+        form(action='/mssg' method='post')
+          input#name.cont(type='text' name='sender' placeholder='Name' required='')
+          span.fa.fa-user.user
+          br
+          input#email.cont(type='text' name='email' placeholder='Email' required='')
+          span.fa.fa-envelope-o.email_icon
+          br
+          input#subjecting.cont(type='text' name='subject' placeholder='Subject' required='')
+          span.fa.fa.fa-pencil.subject
+          br
+          textarea#boxing.cont(rows='10' cols='40' name='message' placeholder='Message')
+          span.fa.fa-comment-o.comment
+          input#submit_button(type='submit' name='sndmsg' value='Send a message')
+    .boxfill
+      #map
+        iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11544.879689788599!2d-79.37451842122067!3d43.664395788405905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb5007478375%3A0xe0eb3adc84088b47!2sCabbagetown%2C%20Toronto%2C%20ON!5e0!3m2!1sen!2sca!4v1644449009836!5m2!1sen!2sca' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy')
+      br
+      h3 333 Main Street, Toronto Ont.
+      h3
+        | Contact Us: 
+        a(href='tel:555-555-555' style='text-decoration: none;') 555-555-555

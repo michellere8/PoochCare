@@ -1,0 +1,70 @@
+extends layout
+
+block content 
+
+  section.content
+    #banner
+      h2#wmsg Welcome to your profile #{firstName}!
+      a.btn.btn-success#btnba(href='booking') Book Appointment
+      a.btn.btn-danger#btnlu(href='/logout') Logout
+      .dog-container
+        .body
+        .legA
+        .legB
+        .legC
+        .legD
+        .tail
+        .ear
+        .nose
+        .eye
+        .tounge
+      
+  section.content
+    #bookbox
+      h3 Appointments Booked
+      table.content-table
+       thead
+         tr
+           th Name
+           th For
+           th service
+           th Date
+           th Time
+        tbody
+          tr
+            td 
+            td 
+            td 
+            td 
+            td 
+
+    //-  //- each resultArray, i in userobj error: Cannot read properties of undefined (reading 'length')
+    //-           tr
+    //-         td #{firstName}
+    //-         td #{dogname}
+    //-         td #{service}
+    //-         td #{date}
+    //-         td #{time}
+
+    //-    //- try 2
+    //-    //- h2= results from mongo:
+    //-   //- select
+    //-   //-   each resultArra, i in Appointments
+    //-   //-     if resultArray.list
+    //-   //-       each item in resultArray
+    //-   //-         p #{item}
+    //-        //- div Result #{i} #{mongo_result}
+
+    //-    //- try3
+    //-   //-     tr
+    //-   //-      th For
+    //-   //-      th service
+    //-   //-      th Date
+    //-   //-      th Time
+    //-   //-   tbody
+    //-   //-     each resultArray, i in appointments 
+    //-   //-       tr
+    //-   //-         td= resultArray.dogname
+    //-   //-         td= resultArray.service
+    //-   //-         td= resultArray.date
+    //-   //-         td= resultArray.time

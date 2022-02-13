@@ -1,0 +1,24 @@
+extends layout2
+
+block content 
+
+  section.sngupBox
+    img.bkground(src='images/banner1.jpg')
+    h3#text
+      | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      | incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      | ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+      | in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    h2= error
+    .outter
+      .inner
+        form#login_form(action='signup' method='post')
+          h1.ftitle Sign Up
+          input(type='text' name='fname' placeholder='Your Name')
+          input(type='text' name='lname' placeholder='Your Last Name')
+          input(type='text' name='email' placeholder='Email')
+          input(type='password' name='pass' placeholder='Password')
+          input#logIn(type='submit' value='Sign Up..' style='float: none;')
+          p(style='color:black;')
+            | Already a member? 
+            a#singIn(href='signin' style='color: red;') Sign in

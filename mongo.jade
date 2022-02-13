@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  if(docs.length)
+    each Person in docs 
+      p #{Person.name} 
+      p #{Person.dogname}
+  else 
+    p No one is in your database
+  //- table.content-table
+  //-   thead
+  //-     tr
+  //-       th For
+  //-       th service
+  //-       th Date
+  //-       th Time
+  //-     tbody
+  //-       each resultArray, i in appointments
+  //-       tr
+  //-         td= resultArray.dogname
+  //-         td= resultArray.service
+  //-         td= resultArray.date
+  //-         td= resultArray.time
+  //- h2= "results from mongo:"
+  //-  select
+  //-    each resultArra, i in Appointments
+  //-      if resultArray.list
+  //-      each item in resultArray
+  //-        p #{item}
+  //-          div Result #{i} #{resultArray}
